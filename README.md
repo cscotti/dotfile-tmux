@@ -5,7 +5,7 @@ Configuration file for tmux
 
 ressource : <https://www.ricalo.com/blog/install-powerline-windows/#install-and-configure-powerline-fonts>
 
-on windows 10/11 - install font
+windows 10/11 session - install powerline required font (with admin role)
 ```
 powershell -command "& { iwr https://github.com/powerline/fonts/archive/master.zip -OutFile ~\fonts.zip }"
 Expand-Archive -Path ~\fonts.zip -DestinationPath ~
@@ -13,13 +13,13 @@ Expand-Archive -Path ~\fonts.zip -DestinationPath ~
 ~\fonts-master\install.ps1
 ```
 
-on ubuntu - install powerline lib
+ubuntu session - install powerline binary
 ```
 sudo add-apt-repository universe
 sudo apt install --yes powerline
 ```
 
-in ubuntu - To configure Powerline in tmux, add the following to your `~.tmux` file
+ubuntu session - To configure Powerline in tmux, add the following to your `~.tmux` file
 ```
 set -g default-terminal "screen-256color"
 source "/usr/share/powerline/bindings/tmux/powerline.conf"
