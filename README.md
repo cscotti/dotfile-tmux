@@ -9,9 +9,10 @@ Copy `.tmux.conf` to your Home directory
 ressource : <https://www.ricalo.com/blog/install-powerline-windows/#install-and-configure-powerline-fonts>
 
 - ubuntu session - copy file to your home directory
-Copy `.tmux.conf_wsl` and rename it to `.tmux.conf`
+<br>Copy `.tmux.conf_wsl` and rename it to `.tmux.conf`
 
 - windows 10/11 session - install powerline required font (with admin role)
+<br>
 ```
 powershell -command "& { iwr https://github.com/powerline/fonts/archive/master.zip -OutFile ~\fonts.zip }"
 Expand-Archive -Path ~\fonts.zip -DestinationPath ~
@@ -29,6 +30,7 @@ sudo apt install --yes powerline
 ```
 #===================================
 # Tmux pan
+<br>
 start_tmux() {
 tmux new-session -s "mySession_$(date +%s)" -d
 tmux split-window -h
