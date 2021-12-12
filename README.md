@@ -1,9 +1,11 @@
-# tmux
-Configuration file for tmux
+# tmux for Linux
+Copy `.tmux.conf` to your Home directory
 
-# additional resources if you use wsl with ubuntu and powerline
+# tmux for wsl/windows
 
 ressource : <https://www.ricalo.com/blog/install-powerline-windows/#install-and-configure-powerline-fonts>
+
+Copy `.tmux.conf_wsl` to your Home directory and rename it to `.tmux.conf`
 
 windows 10/11 session - install powerline required font (with admin role)
 ```
@@ -19,8 +21,16 @@ sudo add-apt-repository universe
 sudo apt install --yes powerline
 ```
 
-ubuntu session - To configure Powerline in tmux, add the following to your `~.tmux` file
+Add this to .zshrc in order to set tmux panes before launch
 ```
-set -g default-terminal "screen-256color"
-source "/usr/share/powerline/bindings/tmux/powerline.conf"
+#===================================
+# Tmux pan
+start_tmux() {
+tmux new-session -s "mySession_$(date +%s)" -d
+tmux split-window -h
+tmux split-window -v
+tmux -2 attach-session -d 
+}
+alias tmux="start_tmux"
+
 ```
